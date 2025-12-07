@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Header } from '../components/Header';
+import { MessageCircle, Phone, Mail, MapPin } from 'lucide-react';
+---
+
+<Layout title="Contacto" description="Contacta a Novatek">
+  <Header client:load />
+  <section class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="md:col-span-2 bg-gray-50 p-6 rounded-xl shadow">
+        <h1 class="text-3xl font-extrabold mb-4">Contacto</h1>
+        <form class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Nombre</label>
+            <input type="text" class="mt-1 w-full border rounded-md p-2" placeholder="Tu nombre" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Email</label>
+            <input type="email" class="mt-1 w-full border rounded-md p-2" placeholder="tu@correo.com" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Mensaje</label>
+            <textarea class="mt-1 w-full border rounded-md p-2 h-32" placeholder="Escribe tu consulta"></textarea>
+          </div>
+          <button type="button" class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-md font-semibold">Enviar</button>
+        </form>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow space-y-4">
+        <div class="flex items-center gap-3"><MapPin class="text-[#0d2742]" /><span>Provincia de Buenos Aires</span></div>
+        <div class="flex items-center gap-3"><Phone class="text-[#0d2742]" /><span>3794-000000</span></div>
+        <div class="flex items-center gap-3"><Mail class="text-[#0d2742]" /><a href="mailto:administracion@novatekargentina.com.ar" class="hover:underline">administracion@novatekargentina.com.ar</a></div>
+        <div class="flex items-center gap-3"><MessageCircle class="text-[#0d2742]" /><a href={`https://wa.me/${import.meta.env.WHATSAPP_NUMBER ?? '5490000000000'}`} target="_blank" rel="noopener noreferrer" class="text-orange-600 hover:underline">WhatsApp</a></div>
+      </div>
+    </div>
+  </section>
+</Layout>

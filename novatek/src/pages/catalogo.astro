@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Header } from '../components/Header';
+import { ProductGrid } from '../components/ProductGrid';
+---
+
+<Layout title="Catálogo" description="Explora el catálogo completo de Novatek">
+  <Header client:load />
+  <section class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="mb-8">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900">Catálogo Completo</h1>
+        <p class="text-gray-600 mt-2">Busca, filtra y explora todos los ítems disponibles.</p>
+      </div>
+      <ProductGrid client:load />
+    </div>
+  </section>
+</Layout>
